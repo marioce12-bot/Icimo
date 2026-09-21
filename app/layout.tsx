@@ -13,6 +13,7 @@ export const metadata: Metadata = {
       "Cherchez, discutez avec le propriétaire, réservez et payez depuis une seule application.",
     locale: "fr_BJ",
     type: "website",
+    images: ["/icimo-logo.png"],
   },
 };
 

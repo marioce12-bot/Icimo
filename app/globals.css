@@ -177,6 +177,8 @@ svg {
   color: var(--ink);
 }
 
+.logo img { display: block; width: 132px; height: auto; object-fit: contain; }
+
 .nav-links {
   display: none;
   align-items: center;
@@ -798,3 +800,20 @@ svg {
   font-weight: 600;
   color: var(--ink);
 }
+
+.explorer-page { background: var(--paper); }
+.explorer-page h1 { max-width: 48rem; color: var(--ink); }
+.explorer-toolbar { display: flex; gap: .75rem; max-width: 48rem; margin: 2rem 0 3rem; }
+.explorer-toolbar input { flex: 1; min-height: 3rem; border: 1px solid var(--line); border-radius: .4rem; padding: 0 1rem; font: inherit; background: #fff; }
+.explorer-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+.explorer-card { background: #fff; border: 1px solid var(--line); border-radius: .65rem; overflow: hidden; }
+.explorer-image { height: 12rem; display: grid; place-items: center; color: rgba(255,255,255,.8); font-family: var(--font-display); font-size: 2rem; font-weight: 800; }
+.explorer-image-1 { background: linear-gradient(135deg, #40569b, #93a8db); }
+.explorer-image-2 { background: linear-gradient(135deg, #247e73, #8dc8a8); }
+.explorer-image-3 { background: linear-gradient(135deg, #c8764f, #e5c17f); }
+.explorer-card-body { padding: 1.1rem; }
+.explorer-card-body p { color: var(--muted); font-size: .8rem; margin: 0 0 .55rem; }
+.explorer-card-body h2 { font-size: 1.35rem; margin: 0 0 1rem; }
+.explorer-card-body strong { font-size: .9rem; }
+.explorer-action { display: flex; justify-content: space-between; width: 100%; margin-top: 1rem; padding: .75rem 0 0; background: none; border-top: 1px solid var(--line); color: var(--ink); font-weight: 700; }
+@media (max-width: 760px) { .explorer-cards { grid-template-columns: 1fr; } .explorer-toolbar { flex-direction: column; } }

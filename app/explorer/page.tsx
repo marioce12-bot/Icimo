@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Logo from "@/components/Logo";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Explorer les logements — ICIMO",
@@ -32,10 +32,10 @@ export default async function ExplorerPage({
   ].filter(Boolean) as string[];
 
   return (
-    <main className="stub">
+    <main className="stub explorer-page">
       <div className="wrap">
         <Link className="logo logo-dark" href="/" aria-label="ICIMO, accueil">
-          <Logo />
+          <Image src="/icimo-logo.png" alt="ICIMO" width={132} height={48} priority />
         </Link>
 
         <h1>
@@ -43,12 +43,21 @@ export default async function ExplorerPage({
             ? "Espace propriétaire"
             : "Explorer les logements"}
         </h1>
-        <p className="stub-lead">
-          La plateforme arrive bientôt. Cette page accueillera la recherche, les
-          résultats en liste et sur carte, et les fiches logements, sans compte
-          requis. L&apos;inscription sera demandée seulement pour contacter un
-          propriétaire, réserver ou enregistrer un favori.
-        </p>
+        <p className="stub-lead">Parcourez librement les logements disponibles au Bénin. Aucun compte n&apos;est requis pour découvrir les annonces ; la connexion est demandée uniquement pour contacter, réserver ou enregistrer un favori.</p>
+
+        <div className="explorer-toolbar">
+          <input aria-label="Rechercher une ville" placeholder="Rechercher une ville..." defaultValue={ville ?? ""} />
+          <button className="btn btn-ink" type="button">Rechercher</button>
+        </div>
+
+        <div className="explorer-cards">
+          {["Appartement lumineux à Cotonou", "Maison paisible à Ouidah", "Studio central à Porto-Novo"].map((title, index) => (
+            <article className="explorer-card" key={title}>
+              <div className={`explorer-image explorer-image-${index + 1}`}><span>ICIMO</span></div>
+              <div className="explorer-card-body"><p>{["Cotonou", "Ouidah", "Porto-Novo"][index]} · Bénin</p><h2>{title}</h2><strong>{["28 000", "22 000", "18 000"][index]} FCFA / nuit</strong><button className="explorer-action" type="button" onClick={() => alert("Connectez-vous ou créez un compte pour continuer.")}>Réserver <span>→</span></button></div>
+            </article>
+          ))}
+        </div>
 
         {criteres.length > 0 && (
           <ul className="stub-criteres" aria-label="Votre recherche">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "@/components/Logo";
 import Skyline from "@/components/Skyline";
 import OwnerCalendar from "@/components/OwnerCalendar";
@@ -96,7 +97,7 @@ export default function Home() {
         <nav className="nav" aria-label="Navigation principale">
           <div className="wrap">
             <Link className="logo" href="/" aria-label="ICIMO, accueil">
-              <Logo />
+              <Image src="/icimo-logo.png" alt="ICIMO" width={132} height={48} priority />
             </Link>
             <div className="nav-links">
               <a href="#fonctionnement">Comment ça marche</a>
@@ -300,7 +301,7 @@ export default function Home() {
       <footer className="footer">
         <div className="wrap footer-row">
           <Link className="logo logo-dark" href="/" aria-label="ICIMO, accueil">
-            <Logo />
+            <Image src="/icimo-logo.png" alt="ICIMO" width={132} height={48} />
           </Link>
           <p>ICIMO est une marque d&apos;ICE HOLDING. Lancement au Bénin.</p>
           <p>© 2026 ICIMO</p>
