@@ -1,7 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/bricolage-grotesque";
-import "@fontsource-variable/instrument-sans";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "ICIMO — Trouvez, réservez et payez votre logement au Bénin",
@@ -18,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#14205C",
+  themeColor: "#0E4CFF",
   width: "device-width",
   initialScale: 1,
 };
@@ -29,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${inter.variable} ${fraunces.variable}`}>
       <body>{children}</body>
     </html>
   );
